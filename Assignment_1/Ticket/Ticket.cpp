@@ -9,9 +9,9 @@ Ticket::Ticket(std::string date, std::string flightNo, std::string seat, std::st
 //    return this->date;
 //}
 //
-//std::string Ticket::getFlightNo() const {
-//    return this->flightNo;
-//}
+std::string Ticket::getFlightNo() const {
+    return this->flightNo;
+}
 //
 //std::string Ticket::getSeat() const {
 //    return this->seat;
@@ -21,9 +21,9 @@ Ticket::Ticket(std::string date, std::string flightNo, std::string seat, std::st
 //    return this->price;
 //}
 //
-//std::string Ticket::getUsername() const {
-//    return this->username;
-//}
+std::string Ticket::getUsername() const {
+    return this->username;
+}
 
 long Ticket::getBookedID() const {
     return this->bookedID;

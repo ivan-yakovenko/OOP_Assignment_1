@@ -17,13 +17,13 @@ public:
 
 //    std::string getDate() const;
 //
-//    std::string getFlightNo() const;
+    std::string getFlightNo() const;
 
-    std::string getSeat() const;
+//    std::string getSeat() const;
 
 //    std::string getPrice() const;
 //
-//    std::string getUsername() const;
+    std::string getUsername() const;
 
     long getBookedID() const;
 
