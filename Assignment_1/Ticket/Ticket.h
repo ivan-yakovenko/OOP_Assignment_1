@@ -19,10 +19,10 @@ public:
 //
     std::string getFlightNo() const;
 
-//    std::string getSeat() const;
+    std::string getSeat() const;
 
-//    std::string getPrice() const;
-//
+    std::string getPrice() const;
+
     std::string getUsername() const;
 
     long getBookedID() const;
@@ -44,4 +44,6 @@ public:
     void printTicket() const;
 
     void printForFlight() const;
+
+    void printForUsername() const;
 };
