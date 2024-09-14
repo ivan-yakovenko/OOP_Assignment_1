@@ -12,23 +12,22 @@ private:
     std::string flightNo;
     std::unordered_map<std::string, std::string> priceForSeat;
     std::unordered_map<std::string, std::string> bookedSeat;
-    std::vector<Ticket> bookedTickets;
-//    bool isAvailable;
+    std::unordered_map<long, Ticket> bookedTickets;
 public:
     Airplane();
 
     Airplane(std::string date, std::string flightNo,
              std::unordered_map<std::string, std::string> priceForSeat,
              std::unordered_map<std::string, std::string> bookedSeat,
-             std::vector<Ticket> bookedTickets);
+             std::unordered_map<long, Ticket> bookedTickets);
 
-//    std::string getDate() const;
+    std::string getDate() const;
 //
-//    std::string getFlightNo() const;
+    std::string getFlightNo() const;
 //
 //    int getSeatsPerRow() const;
 //
-//    std::unordered_map<std::string, std::string> getPriceForSeat() const;
+    std::unordered_map<std::string, std::string> getPriceForSeat() const;
 
 //    bool getIsAvailable() const;
 
@@ -42,9 +41,9 @@ public:
 
 //    void setIsAvailable(bool isAvailable);
 
-    std::vector<Ticket> getBookedTickets() const;
+    std::unordered_map<long, Ticket> getBookedTickets() const;
 
-    void generalPrint() const;
+//    void generalPrint() const;
 
     void printPlaces() const;
 
@@ -56,7 +55,7 @@ public:
 
     void viewByID(long bookedID);
 
-    void viewByUsername(std::string &username);
+//    void viewByUsername(std::string &username);
 
-    void viewByFlightNumber(std::string &flightNo);
+//    void viewByFlightNumber(std::string &flightNo);
 };
