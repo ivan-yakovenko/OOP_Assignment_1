@@ -13,14 +13,14 @@ std::string Ticket::getFlightNo() const {
     return this->flightNo;
 }
 //
-//std::string Ticket::getSeat() const {
-//    return this->seat;
-//}
-//
-//std::string Ticket::getPrice() const {
-//    return this->price;
-//}
-//
+std::string Ticket::getSeat() const {
+    return this->seat;
+}
+
+std::string Ticket::getPrice() const {
+    return this->price;
+}
+
 std::string Ticket::getUsername() const {
     return this->username;
 }
@@ -59,16 +59,24 @@ long Ticket::generateID() {
 }
 
 void Ticket::printTicket() const {
+    std::cout << "Flight: " << flightNo << std::endl;
     std::cout << "Date: " << date << std::endl;
-    std::cout << "Flight No: " << flightNo << std::endl;
     std::cout << "Seat: " << seat << std::endl;
     std::cout << "Price: " << price << std::endl;
     std::cout << "Username: " << username << std::endl;
-//    std::cout << "Booked ID: " << bookedID << std::endl;
 }
 
 void Ticket::printForFlight() const {
     std::cout << "Seat: " << seat << std::endl;
-    std::cout << "Price: " << price << std::endl;
     std::cout << "Username: " << username << std::endl;
+    std::cout << "Price: " << price << std::endl;
+    std::cout << std::endl;
+}
+
+void Ticket::printForUsername() const {
+    std::cout << "Flight: " << flightNo << std::endl;
+    std::cout << "Date: " << date << std::endl;
+    std::cout << "Seat: " << seat << std::endl;
+    std::cout << "Price: " << price << std::endl;
+    std::cout << std::endl;
 }
