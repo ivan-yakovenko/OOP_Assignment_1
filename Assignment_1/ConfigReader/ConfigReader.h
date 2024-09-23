@@ -1,28 +1,15 @@
 #pragma once
-
 #include "../Airplane/Airplane.h"
+#include "../FileHandler/FileHandler.h"
+#include "../FileCloser/FileCloser.h"
 #include <sstream>
-#include <fcntl.h>
-#include <unistd.h>
 
-class FileHandler {
+class ConfigReader {
 public:
-//    std::vector<Airplane> getAirplanesInfo(std::string& filename);
-    FileHandler();
-
-    FileHandler(std::string &filename);
-
-    ~FileHandler();
-
-    FileHandler(FileHandler &other);
-
-    FileHandler &operator=(FileHandler &other);
-
-    FileHandler(FileHandler &&other);
-
-    FileHandler &operator=(FileHandler &&other);
-
+    std::vector<Airplane> getAirplanesInfo(std::string& filename);
 private:
-    int fileDescriptor;
-//    void seatsGenerator(int seatsPerRow, int startRow, int endRow, std::string& price, std::unordered_map<std::string, std::string>& priceForSeat);
+    using filePtr = std::unique_ptr<FileHandler, FileCloser>;
+    void seatsGenerator(int seatsPerRow, int startRow, int endRow, std::string& price, std::unordered_map<std::string, std::string>& priceForSeat);
+    void readLine(char* buffer, ssize_t returnValue, std::string &line, std::vector<Airplane> &airplanes);
+    void tokenizeLine(std::string &line, std::vector<Airplane> &airplanes);
 };
