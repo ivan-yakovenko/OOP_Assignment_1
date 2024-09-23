@@ -1,5 +1,8 @@
-//
-// Created by Ivan Yakovenko on 21.09.2024.
-//
-
 #include "FileCloser.h"
+
+void FileCloser::operator()(FileHandler *fd) const {
+    if (int(*fd) && int(*fd) != -1) {
+        close(int(*fd));
+        delete fd;
+    }
+}
