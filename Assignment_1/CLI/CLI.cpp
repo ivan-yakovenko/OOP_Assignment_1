@@ -89,7 +89,7 @@ void CLI::viewFlightNo(std::string &flightNo) {
         }
     }
     if (!viewed) {
-        std::cerr << "No such flight number" << std::endl;
+        std::cerr << "No information about such flight number" << std::endl;
     }
 }
 
