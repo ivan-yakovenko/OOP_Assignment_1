@@ -13,10 +13,11 @@ private:
 public:
     Ticket();
 
-    Ticket(std::string date, std::string flightNo, std::string seat, std::string price, std::string username, long bookedID);
+    Ticket(std::string date, std::string flightNo, std::string seat, std::string price, std::string username,
+           long bookedID);
 
-//    std::string getDate() const;
-//
+    std::string getDate() const;
+
     std::string getFlightNo() const;
 
     std::string getSeat() const;
@@ -24,8 +25,6 @@ public:
     std::string getPrice() const;
 
     std::string getUsername() const;
-
-    long getBookedID() const;
 
     void setDate(std::string &date);
 

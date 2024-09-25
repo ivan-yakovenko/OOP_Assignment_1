@@ -22,28 +22,12 @@ public:
              std::unordered_map<long, Ticket> bookedTickets);
 
     std::string getDate() const;
-//
+
     std::string getFlightNo() const;
-//
-//    int getSeatsPerRow() const;
-//
+
     std::unordered_map<std::string, std::string> getPriceForSeat() const;
 
-//    bool getIsAvailable() const;
-
-//    void setDate(std::string &date);
-//
-//    void setFlightNo(std::string &flightNo);
-//
-//    void setSeatsPerRow(int seatsPerRo);
-//
-//    void setPriceForSeat(std::unordered_map<std::string, std::string> &priceForSeat);
-
-//    void setIsAvailable(bool isAvailable);
-
     std::unordered_map<long, Ticket> getBookedTickets() const;
-
-//    void generalPrint() const;
 
     void printPlaces() const;
 
@@ -54,8 +38,4 @@ public:
     void returnTicket(long bookedID);
 
     void viewByID(long bookedID);
-
-//    void viewByUsername(std::string &username);
-
-//    void viewByFlightNumber(std::string &flightNo);
 };

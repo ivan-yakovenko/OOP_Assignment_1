@@ -11,7 +11,7 @@ private:
     void returnTicket(long bookedID);
     void viewID(long bookedID);
     void viewUsername(std::string &username);
-    void viewFlightNo(std::string &flightNo);
+    void viewFlight(std::string &flightNo, std::string &date);
     bool validCommand(std::string &command);
     bool checkIfId(std::string &parameter);
 public:

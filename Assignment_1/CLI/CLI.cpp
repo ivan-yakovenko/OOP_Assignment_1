@@ -21,7 +21,8 @@ void CLI::checkPlaces(std::string &date, std::string &flightNo) {
 void CLI::bookSeat(std::string &date, std::string &flightNo, std::string &seat, std::string &username) {
     bool booked = false;
     for (auto &airplane: airplanes) {
-        if (airplane.getDate() == date && airplane.getFlightNo() == flightNo && airplane.getPriceForSeat().contains(seat)) {
+        if (airplane.getDate() == date && airplane.getFlightNo() == flightNo &&
+            airplane.getPriceForSeat().contains(seat)) {
             airplane.book(date, flightNo, seat, username);
             booked = true;
             break;
@@ -75,11 +76,11 @@ void CLI::viewUsername(std::string &username) {
     }
 }
 
-void CLI::viewFlightNo(std::string &flightNo) {
+void CLI::viewFlight(std::string &flightNo, std::string &date) {
     bool viewed = false;
     for (auto &airplane: airplanes) {
         for (const auto &ticket: airplane.getBookedTickets()) {
-            if (ticket.second.getFlightNo() == flightNo) {
+            if (ticket.second.getFlightNo() == flightNo && ticket.second.getDate() == date) {
                 ticket.second.printForFlight();
                 viewed = true;
             }
@@ -140,9 +141,8 @@ void CLI::run() {
             if (checkIfId(parameter)) {
                 long bookedID = std::stol(parameter);
                 viewID(bookedID);
-            }
-            else {
-                if(parameter != "username" && parameter != "flight") {
+            } else {
+                if (parameter != "username" && parameter != "flight") {
                     std::cerr << "Wrong parameter, try again" << std::endl;
                 }
                 if (parameter == "username") {
@@ -151,9 +151,9 @@ void CLI::run() {
                     viewUsername(username);
                 }
                 if (parameter == "flight") {
-                    std::string flightNo;
-                    tokens >> flightNo;
-                    viewFlightNo(flightNo);
+                    std::string flightNo, date;
+                    tokens >> flightNo >> date;
+                    viewFlight(flightNo, date);
                 }
 
             }
